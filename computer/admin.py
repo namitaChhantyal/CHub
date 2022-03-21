@@ -3,7 +3,7 @@ from django.contrib import admin
 # Register your models here.
 from .models import ComputerBrands
 from .models import ComputerSpecification
-from .models import Order
+from .models import Computer
 
 
 class AdminComputerBrands(admin.ModelAdmin):
@@ -14,13 +14,9 @@ admin.site.register(ComputerBrands, AdminComputerBrands)
 
 
 class AdminComputerSpecification(admin.ModelAdmin):
-    list_display = ['generation', 'price_min', 'price_max', 'ram', 'brandname','computercode']
+    list_display = ['generation', 'price_min', 'price_max', 'ram', 'brandname']
 
 
 admin.site.register(ComputerSpecification, AdminComputerSpecification)
 
-class AdminOrder(admin.ModelAdmin):
-    list_display = ['computercode', 'brandname', 'quantity', 'unitrate', 'totalprice']
-
-
-admin.site.register(Order, AdminOrder)
+admin.site.register(Computer)

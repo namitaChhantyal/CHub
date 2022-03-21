@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<body style=" position: relative;
+min-height: 100vh;">
+  <div class="container">
+    <div class="main-body">
+      <div class="col-md-8">
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Computer Code:</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{object.computercode}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Brandname:</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{object.brandname}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Quantity:</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{object.quantity}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Computer Generation:</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{object.computer.generation}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Unit Rate:</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                Rs {{object.unitrate}}
+              </div>
+            </div>
+            <hr>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Total Price:</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                Rs {{object.totalprice}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-12">
+                <a class="btn btn-info " href="{% url 'details' %}">Back</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+{% endblock %}

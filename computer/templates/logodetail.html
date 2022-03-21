@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+
+<body style=" position: relative;
+min-height: 100vh;">
+    <div class="container">
+        <div class="breadcrumb1">
+            <ul style="margin-top: 50px;">
+                <!-- <a href="{% url 'index' %}"><i class="fa fa-home home_1 dark"></i></a> -->
+                <!-- <span class="divider">&nbsp;|&nbsp;</span> -->
+                <a class="current-page">Computer Details</a>
+            </ul>
+        </div>
+        <table class="table table-hover text-start fadeInDown">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Computer Code</th>
+                    <th scope="col">Brandname</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Computer Generation</th>
+                    <th scope="col">Unit rate</th>
+                    <th scope="col">Total Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for b in object_list %}
+                <tr>
+                    <td>{{ b.computercode }}</td>
+                    <td>{{ b.brandname }}</td>
+                    <td>{{ b.quantity }}</td>
+                    <td>{{ b.computer.generation }}</td>
+                    <td>Rs {{ b.unitrate }}</td>
+                    <td>Rs {{ b.totalprice }}</td>
+                </tr>
+
+
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+</body>
+{% endblock %}
